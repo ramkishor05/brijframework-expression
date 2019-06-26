@@ -3,7 +3,7 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>org.brijframework</groupId>
-	<artifactId>org.brijframework-expression</artifactId>
+	<artifactId>brijframework-expression</artifactId>
 	<version>0.0.1</version>
 	<packaging>jar</packaging>
 
@@ -23,7 +23,7 @@
 		</dependency>
 		<dependency>
 			<groupId>org.brijframework</groupId>
-			<artifactId>org.brijframework-model</artifactId>
+			<artifactId>brijframework-model</artifactId>
 			<version>0.0.1</version>
 		</dependency>
 	</dependencies>
