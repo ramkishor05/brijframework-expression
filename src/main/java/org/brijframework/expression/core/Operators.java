@@ -8,6 +8,7 @@ import javax.script.ScriptEngine;
 import javax.script.ScriptEngineManager;
 import javax.script.ScriptException;
 
+import org.brijframework.bean.impl.BeanBuilder;
 import org.brijframework.expression.base.IOperator;
 import org.brijframework.expression.constant.OperatorCatagaries;
 import org.brijframework.expression.constant.OperatorsKeys;
@@ -36,7 +37,6 @@ import org.brijframework.expression.operators.OrderByOperator;
 import org.brijframework.expression.operators.ProductOperator;
 import org.brijframework.expression.operators.SubOperator;
 import org.brijframework.expression.operators.SumOperator;
-import org.brijframework.model.builder.ModelBuilder;
 import org.brijframework.util.reflect.InstanceUtil;
 
 public class Operators implements IOperator{
@@ -110,11 +110,11 @@ public class Operators implements IOperator{
 		}
 	}
 	protected Object operationValue(Object obj, String _s) {
-		return _s == null || _s.length() <= 0 ? obj : ModelBuilder.getBuilder(obj).getProperty( _s);
+		return _s == null || _s.length() <= 0 ? obj : BeanBuilder.getBuilder(obj).getProperty( _s);
 	}
 
 	protected Object setOperationValue(Object obj, String _s,Object val) {
-		return _s == null || _s.length() <= 0 ? obj :ModelBuilder.getBuilder(obj).setProperty( _s,val);
+		return _s == null || _s.length() <= 0 ? obj :BeanBuilder.getBuilder(obj).setProperty( _s,val);
 	}
 
 	public Operators() {
@@ -153,8 +153,6 @@ public class Operators implements IOperator{
 		}
 		return result;
 	}
-	
-	
 
 	@Override
 	public boolean state(Object ...obj) {

@@ -3,12 +3,12 @@ package org.brijframework.expression.core;
 import java.util.Collection;
 import java.util.Stack;
 
+import org.brijframework.bean.impl.BeanBuilder;
 import org.brijframework.expression.base.IExpression;
 import org.brijframework.expression.base.IOperator;
 import org.brijframework.expression.constant.OperatorsKeys;
 import org.brijframework.expression.meta.OperatorMeta;
 import org.brijframework.expression.util.ExpressionUtil;
-import org.brijframework.model.builder.ModelBuilder;
 import org.brijframework.util.reflect.InstanceUtil;
 import org.brijframework.util.text.StringUtil;
 
@@ -20,7 +20,7 @@ public class Expressions implements IExpression {
 	}
 
 	public static Object operationValue(Object obj, String _s) {
-		return _s == null || _s.length() <= 0 ? obj : ModelBuilder.getBuilder(obj).getProperty(_s);
+		return _s == null || _s.length() <= 0 ? obj : BeanBuilder.getBuilder(obj).getProperty(_s);
 	}
 
 	public static IOperator operatorForKey(String _key) {
